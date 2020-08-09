@@ -23,13 +23,12 @@ def rottingOranges(grid):
             i, j = queue.popleft()
             for dx, dy in dirs:
                 new_i = i + dx
-                new_j = i + dy
+                new_j = j + dy
                 if 0 <= new_i < m and 0 <= new_j < n:
                     if grid[new_i][new_j] == 1:
                         fresh_count -= 1
                         grid[new_i][new_j] = 2
                         queue.append((new_i, new_j))
-                        print (queue)
     return -1 if fresh_count != 0 else max(level-1, 0)
 
 grid = [[2,1,1],[1,1,0],[0,1,1]]
